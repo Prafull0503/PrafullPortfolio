@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import '../styles/TaquiAI.css';
 
 const SUGGESTIONS = [
-  "Tell me about Aureza E-Commerce",
-  "Explain his IntelliRAG & AI projects",
-  "What are Taqui's strongest technical skills?",
-  "Is he suitable for a Java Spring Boot role?",
+  "Tell me about his key projects",
+  "What are Prafull's strongest technical skills?",
+  "What is his education and background?",
+  "Is he suitable for a Full Stack / Backend role?",
 ];
 
 /* ─── Minimal Markdown Renderer ─────────────────────────────────────── */
@@ -239,7 +239,7 @@ function TaquiAI() {
         onClick={handleOpen}
         role="button"
         tabIndex={0}
-        aria-label="Open Taqui AI chat"
+        aria-label="Open Prafull AI chat"
         id="taqui-ai-trigger"
       >
         {showBubble && (
@@ -252,7 +252,7 @@ function TaquiAI() {
               ✕
             </button>
             Hey! Want to know more about{' '}
-            <span className="taqui-ai-trigger__bubble-highlight">Taqui</span>?
+            <span className="taqui-ai-trigger__bubble-highlight">Prafull</span>?
             Chat with his AI.
           </div>
         )}
@@ -260,7 +260,7 @@ function TaquiAI() {
           <div className="taqui-ai-trigger__glow" />
           <img
             src="/taqui_ai_avatar.png"
-            alt="Taqui AI"
+            alt="Prafull AI"
             className="taqui-ai-trigger__avatar"
             draggable="false"
           />
@@ -283,15 +283,15 @@ function TaquiAI() {
         <div className="taqui-ai-header">
           <img
             src="/taqui_ai_avatar.png"
-            alt="Taqui AI"
+            alt="Prafull AI"
             className="taqui-ai-header__avatar"
           />
           <div className="taqui-ai-header__info">
             <h3 className="taqui-ai-header__name">
-              Taqui AI
+              Prafull AI
               <span className="taqui-ai-header__badge">AI</span>
             </h3>
-            <p className="taqui-ai-header__status">Ask me anything about Taqui</p>
+            <p className="taqui-ai-header__status">Ask me anything about Prafull</p>
           </div>
           <button
             className="taqui-ai-header__close"
@@ -310,14 +310,14 @@ function TaquiAI() {
             <div className="taqui-ai-welcome">
               <img
                 src="/taqui_ai_avatar.png"
-                alt="Taqui AI"
+                alt="Prafull AI"
                 className="taqui-ai-welcome__avatar"
               />
               <h3 className="taqui-ai-welcome__title">
-                Hi! I'm Taqui's AI Assistant
+                Hi! I'm Prafull's AI Assistant
               </h3>
               <p className="taqui-ai-welcome__text">
-                Ask me anything about his skills, projects, experience, or technical background. I'm here to help recruiters learn more about Taqui.
+                Ask me anything about his skills, projects, experience, or technical background. I'm here to help you learn more about Prafull.
               </p>
               <div className="taqui-ai-welcome__suggestions">
                 {SUGGESTIONS.map((s, i) => (
@@ -387,7 +387,7 @@ function TaquiAI() {
           <textarea
             ref={inputRef}
             className="taqui-ai-input__field"
-            placeholder="Ask about Taqui's skills, projects..."
+            placeholder="Ask about Prafull's skills, projects..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}

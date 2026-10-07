@@ -10,8 +10,8 @@ from .api.chat import router as chat_router
 load_dotenv()
 
 app = FastAPI(
-    title="Taqui AI — Portfolio Agent",
-    description="AI Recruiter Agent for Mohammad Taqui Alam's developer portfolio",
+    title="Prafull AI — Portfolio Agent",
+    description="AI Recruiter Agent for Prafull Shukla's developer portfolio",
     version="1.0.0",
     docs_url="/api/docs",
     redoc_url=None,
@@ -45,4 +45,4 @@ app.include_router(chat_router, prefix="/api")
 @app.get("/api/health")
 async def health_check():
     """Health check endpoint."""
-    return {"status": "healthy", "service": "taqui-ai"}
+    return {"status": "healthy", "service": "prafull-ai"}

@@ -9,9 +9,9 @@ export const projects = [
     tagline: 'Enterprise-grade multi-role E-Commerce ecosystem built with Java 21 Spring Boot, React 19, PostgreSQL, Stripe payments, and stateless JWT RBAC.',
     description:
       'Aureza is an end-to-end, multi-vendor electronic commerce platform engineered for modularity, relational integrity, and high performance. It features a decoupled Client-Server architecture with a RESTful Spring Boot backend and an Atomic Design React 19 SPA frontend.',
-    github: 'https://github.com/TaquiAlam/Aureza-EcommerceApplication',
+    github: 'https://github.com/Prafull0503/Aureza-EcommerceApplication',
     liveDemo: 'https://aureza-orcin.vercel.app/',
-    documentation: 'https://github.com/TaquiAlam/Aureza-EcommerceApplication#readme',
+    documentation: 'https://github.com/Prafull0503/Aureza-EcommerceApplication#readme',
     stats: [
       { label: 'Architecture', value: 'Decoupled Client-Server' },
       { label: 'Security', value: 'Stateless JWT + RBAC' },
@@ -116,9 +116,9 @@ export const projects = [
     tagline: 'Autonomous Multi-Agent Research System built with LangChain, LangGraph, Python, and Tavily Search API with iterative reflection loops.',
     description:
       'ResearchAgent is an autonomous agentic AI system designed to conduct deep research on complex topics. Built with LangGraph workflows and LLMs, it orchestrates multiple specialized agents through query decomposition, real-time web exploration, critical reflection, and report synthesis.',
-    github: 'https://github.com/TaquiAlam/Research_Agent--Multi-Agent-System.git',
+    github: 'https://github.com/Prafull0503/Research_Agent--Multi-Agent-System.git',
     liveDemo: 'https://research-agent-3rub.onrender.com/',
-    documentation: 'https://github.com/TaquiAlam/Research_Agent--Multi-Agent-System.git#readme',
+    documentation: 'https://github.com/Prafull0503/Research_Agent--Multi-Agent-System.git#readme',
     primaryTags: ['Python', 'LangChain', 'LangGraph', 'Tavily Search API', 'Streamlit', 'Multi-Agent'],
     keyFeatures: [
       {
@@ -159,9 +159,9 @@ export const projects = [
     tagline: 'Production-ready Retrieval-Augmented Generation (RAG) system for PDF document Q&A with ChromaDB vector search and FastAPI.',
     description:
       'IntelliRAG is a production-grade Retrieval-Augmented Generation application engineered for high-accuracy document question-answering. It processes PDF documents through chunking and vector embedding into ChromaDB, executing dense semantic retrieval to deliver grounded, hallucination-resistant answers with LLMs.',
-    github: 'https://github.com/TaquiAlam/IntelliRAG',
+    github: 'https://github.com/Prafull0503/IntelliRAG',
     liveDemo: '',
-    documentation: 'https://github.com/TaquiAlam/IntelliRAG#readme',
+    documentation: 'https://github.com/Prafull0503/IntelliRAG#readme',
     primaryTags: ['FastAPI', 'Python', 'LangChain', 'ChromaDB', 'Vector Embeddings', 'RAG Pipeline'],
     keyFeatures: [
       {

@@ -110,7 +110,7 @@ function Navbar({ theme, toggleTheme, currentRoute = '/', onNavigate }) {
           className="navbar__logo"
           onClick={(e) => handleNavClick(e, { id: 'home', href: '#home', route: '/' })}
         >
-          <div className="navbar__logo-box">TA</div>
+          <div className="navbar__logo-box">PS</div>
         </a>
 
         <nav className="navbar__desktop">

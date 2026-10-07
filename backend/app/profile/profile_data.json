@@ -1,16 +1,16 @@
 {
   "personal": {
-    "name": "Mohammad Taqui Alam",
-    "short_name": "Taqui",
-    "title": "Java Full Stack Developer | Backend Developer | AI Engineer",
-    "location": "Meerut, Uttar Pradesh, India",
-    "email": "alamtaqui@gmail.com",
-    "phone": "+91-6306597320",
-    "about": "Computer Science student with strong programming fundamentals, leadership abilities, and a problem-solving mindset. Skilled in writing clean, efficient code and building production-grade full-stack backends with Java 21 Spring Boot, FastAPI, and Agentic AI/RAG architectures. 5-Star HackerRank in Java • 700+ problems solved on CodeChef.",
-    "github": "https://github.com/TaquiAlam",
-    "linkedin": "https://www.linkedin.com/in/mohammad-taqui",
-    "instagram": "https://www.instagram.com/_taquialam13_/",
-    "portfolio": "https://mohammad-taqui.vercel.app/"
+    "name": "Prafull Shukla",
+    "short_name": "Prafull",
+    "title": "Full Stack Developer | Software Engineer | Backend Developer",
+    "location": "India",
+    "email": "prafullshukla11@gmail.com",
+    "phone": "+91-XXXXXXXXXX",
+    "about": "Computer Science student with strong programming fundamentals, leadership abilities, and a problem-solving mindset. Skilled in writing clean, modular code and building production-grade web applications and backend systems.",
+    "github": "https://github.com/Prafull0503",
+    "linkedin": "https://github.com/Prafull0503",
+    "instagram": "",
+    "portfolio": "https://github.com/Prafull0503/PrafullPortfolio"
   },
 
   "education": {
@@ -147,7 +147,7 @@
         "Layered Controller-Service-Repository architecture with ModelMapper DTOs and centralized @RestControllerAdvice exception handling",
         "Multi-address delivery book with 3-step checkout stepper and live order status tracking (PENDING, PROCESSING, SHIPPED, DELIVERED)"
       ],
-      "github": "https://github.com/TaquiAlam/Aureza-EcommerceApplication",
+      "github": "https://github.com/Prafull0503/Aureza-EcommerceApplication",
       "live": "https://aureza-orcin.vercel.app/"
     },
     {
@@ -172,7 +172,7 @@
         "Modular architecture with clean separation between search, analysis, and report generation",
         "Deployed interactive web application built with Streamlit on Render"
       ],
-      "github": "https://github.com/TaquiAlam/Research_Agent--Multi-Agent-System.git",
+      "github": "https://github.com/Prafull0503/Research_Agent--Multi-Agent-System.git",
       "live": "https://research-agent-3rub.onrender.com/"
     },
     {
@@ -197,7 +197,7 @@
         "High-performance asynchronous REST API built with FastAPI and CORS security",
         "Clean separation of PDF service, embedding service, and RAG retrieval pipelines"
       ],
-      "github": "https://github.com/TaquiAlam/IntelliRAG",
+      "github": "https://github.com/Prafull0503/IntelliRAG",
       "live": ""
     },
     {
@@ -221,7 +221,7 @@
         "Core modules: pet listings, user management, subscriptions, and media upload",
         "Integrated Razorpay payment gateway with layered Controller-Service-Repository design"
       ],
-      "github": "https://github.com/TaquiAlam/Mypet-Apllication",
+      "github": "https://github.com/Prafull0503/Mypet-Apllication",
       "live": ""
     }
   ],

@@ -4,10 +4,10 @@ import '../styles/Sections.css';
 
 const About = () => {
   const details = [
-    { icon: MapPin, label: 'Location', value: 'Meerut, India' },
+    { icon: MapPin, label: 'Location', value: 'India' },
     { icon: GraduationCap, label: 'Education', value: 'B.Tech CSE' },
-    { icon: Briefcase, label: 'Focus', value: 'Java Full Stack' },
-    { icon: Heart, label: 'Interests', value: 'DSA, AI/ML, Backend' },
+    { icon: Briefcase, label: 'Focus', value: 'Full Stack Development' },
+    { icon: Heart, label: 'Interests', value: 'Web Dev, AI, Backend' },
   ];
 
   return (
@@ -21,19 +21,16 @@ const About = () => {
         <div className="about__content">
           <div className="about__text scroll-reveal sr-delay-1">
             <p>
-              Computer Science student with strong programming fundamentals, 
-              leadership abilities, and a problem-solving mindset. Skilled in writing clean, 
-              efficient code and applying creative and critical thinking to real-world projects.
+              Hi, I'm Prafull Shukla! I am a Computer Science student with strong programming 
+              fundamentals, a problem-solving mindset, and a passion for engineering high-performance software.
             </p>
             <p>
-              Achieved a 5-Star HackerRank rating in Java and solved 700+ problems on CodeChef 
-              with a 1400 rating. Nominated at college level for the Smart India Hackathon (SIH) 
-              by presenting an innovative and practical solution.
+              Skilled in writing clean, modular, and maintainable code. I enjoy building modern full-stack 
+              web applications, responsive frontends, and scalable backend architectures.
             </p>
             <p>
-              Actively contributed to management, event operations, and communication, 
-              serving as a core member of SIO NGO. Seeking opportunities to learn, contribute, 
-              and add value to organizational goals.
+              Constantly learning and exploring cutting-edge technologies. Actively seeking opportunities 
+              to collaborate, learn, build impactful products, and contribute to innovative engineering teams.
             </p>
           </div>
 

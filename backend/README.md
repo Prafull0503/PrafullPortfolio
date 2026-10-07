@@ -1,6 +1,6 @@
-# Taqui AI — Backend
+# Prafull AI — Backend
 
-AI Recruiter Agent backend for Mohammad Taqui Alam's developer portfolio.
+AI Recruiter Agent backend for Prafull Shukla's developer portfolio.
 
 ## Tech Stack
 

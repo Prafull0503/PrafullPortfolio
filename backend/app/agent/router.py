@@ -35,7 +35,7 @@ _INTENT_KEYWORDS: dict[str, list[str]] = {
         "30-second", "quick summary", "overview", "assessment",
     ],
     "profile": [
-        "who is", "who's", "tell me about him", "about taqui", "background",
+        "who is", "who's", "tell me about him", "about prafull", "background",
         "education", "degree", "college", "university", "contact", "email",
         "phone", "location", "achievement", "hackerrank", "codechef", "700",
         "linkedin", "github profile", "social", "hobby", "hobbies", "cricket",
