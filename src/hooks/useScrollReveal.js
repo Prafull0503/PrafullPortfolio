@@ -1,0 +1,39 @@
+import { useEffect } from 'react';
+
+/**
+ * Scroll reveal hook using IntersectionObserver.
+ * Adds `.scroll-revealed` class when element enters viewport.
+ */
+const useScrollReveal = (dependency) => {
+  useEffect(() => {
+    const elements = document.querySelectorAll('.scroll-reveal');
+
+    if (!('IntersectionObserver' in window)) {
+      elements.forEach((el) => el.classList.add('scroll-revealed'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('scroll-revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    elements.forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [dependency]);
+};
+
+export default useScrollReveal;

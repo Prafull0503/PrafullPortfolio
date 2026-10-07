@@ -1,0 +1,73 @@
+/* ==========================================
+   SCROLL TO TOP BUTTON
+   ========================================== */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #a855f7;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top--visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.scroll-to-top:hover {
+  background: rgba(99, 102, 241, 0.3);
+  border-color: rgba(168, 85, 247, 0.6);
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.35);
+}
+
+body.light-mode .scroll-to-top {
+  background: rgba(79, 70, 229, 0.08);
+  border-color: rgba(79, 70, 229, 0.25);
+  color: #4f46e5;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .scroll-to-top:hover {
+  background: rgba(79, 70, 229, 0.15);
+  color: #4f46e5;
+  box-shadow: 0 12px 40px rgba(79, 70, 229, 0.2);
+}
+
+.scroll-to-top__hand {
+  transition: transform 0.3s ease;
+}
+
+.scroll-to-top__arrow {
+  margin-top: -2px;
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover .scroll-to-top__hand {
+  transform: translateY(-3px);
+}
+
+.scroll-to-top:hover .scroll-to-top__arrow {
+  transform: translateY(-2px);
+}

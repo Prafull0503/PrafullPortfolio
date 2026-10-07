@@ -1,0 +1,264 @@
+{
+  "personal": {
+    "name": "Mohammad Taqui Alam",
+    "short_name": "Taqui",
+    "title": "Java Full Stack Developer | Backend Developer | AI Engineer",
+    "location": "Meerut, Uttar Pradesh, India",
+    "email": "alamtaqui@gmail.com",
+    "phone": "+91-6306597320",
+    "about": "Computer Science student with strong programming fundamentals, leadership abilities, and a problem-solving mindset. Skilled in writing clean, efficient code and building production-grade full-stack backends with Java 21 Spring Boot, FastAPI, and Agentic AI/RAG architectures. 5-Star HackerRank in Java • 700+ problems solved on CodeChef.",
+    "github": "https://github.com/TaquiAlam",
+    "linkedin": "https://www.linkedin.com/in/mohammad-taqui",
+    "instagram": "https://www.instagram.com/_taquialam13_/",
+    "portfolio": "https://mohammad-taqui.vercel.app/"
+  },
+
+  "education": {
+    "degree": "B.Tech",
+    "field": "Computer Science Engineering (CSE)",
+    "institution": "Sir Chhotu Ram Institute of Engineering and Technology, Meerut",
+    "graduation_year": "2027",
+    "status": "Currently pursuing (Expected graduation 2027)",
+    "cgpa": "8.05"
+  },
+
+  "qualities_and_strengths": [
+    "Strong Technical & Architectural Skills (Controller-Service-Repository, DTO Pattern, Atomic Design)",
+    "Data Structures & Algorithms Problem Solving (700+ CodeChef, 5-Star HackerRank Java)",
+    "Good Explainer & Technical Writer (Published Agentic AI technical guide on Medium)",
+    "Leadership Quality & Team Management (Core member of SIO NGO)"
+  ],
+
+  "hobbies": [
+    "Playing Cricket",
+    "Reading Technical & Architectural Books",
+    "Participating in Debates"
+  ],
+
+  "skills": {
+    "programming": [
+      "Java (Java 21 LTS)",
+      "C",
+      "Python",
+      "Go (Golang)",
+      "Data Structures & Algorithms (DSA)",
+      "System Design",
+      "Database Modeling & Scaling"
+    ],
+    "backend": [
+      "Spring Boot (v4.1.1)",
+      "Spring MVC",
+      "Spring Security 6",
+      "Stateless JWT Authentication (io.jsonwebtoken JJWT 0.13.0)",
+      "RESTful API Design & Best Practices",
+      "Spring Data JPA / Hibernate",
+      "ModelMapper DTO Pattern",
+      "Global Exception Handling (@RestControllerAdvice)",
+      "FastAPI (Python Asynchronous Framework)",
+      "Uvicorn"
+    ],
+    "frontend": [
+      "React 19",
+      "Vite",
+      "Tailwind CSS v4",
+      "React Router v7",
+      "Axios HTTP Client with Interceptors",
+      "Lucide React Icons",
+      "React Native (Expo)"
+    ],
+    "ai_and_data": [
+      "Agentic AI & Multi-Agent Workflows",
+      "LangGraph & LangChain",
+      "RAG (Retrieval-Augmented Generation)",
+      "Vector Embeddings & Semantic Search",
+      "ChromaDB (Vector Database)",
+      "LLMs & Prompt Engineering",
+      "Single-Agent Systems",
+      "Tavily Search API Integration",
+      "LLM Observability & Evaluation"
+    ],
+    "databases_and_storage": [
+      "PostgreSQL 16 (ACID Relational Schema)",
+      "ChromaDB Vector Database",
+      "SQL Query Optimization & Cascades",
+      "Database Relationship Modeling (1:N, M:N)"
+    ],
+    "payments_and_integrations": [
+      "Stripe Payments API (PaymentIntents & Stripe Elements SDK)",
+      "Dynamic Indian UPI QR Code & VPA Direct Transfer",
+      "Razorpay Payment Gateway",
+      "Cash on Delivery (COD)"
+    ],
+    "tools_and_devops": [
+      "Docker (Multi-stage Production Builds)",
+      "Maven",
+      "Git & GitHub",
+      "Postman (API Collections & Testing)",
+      "Eclipse IDE",
+      "Visual Studio Code",
+      "IntelliJ IDEA",
+      "Pytest"
+    ]
+  },
+
+  "experience": [
+    {
+      "title": "Java / Full Stack Developer (Intern)",
+      "company": "BerryBloomer Pvt Ltd",
+      "location": "India",
+      "period": "Jan 2026 - May 2026",
+      "description": [
+        "Worked on MyPet, a full-stack pet marketplace mobile application using Spring Boot and React Native (Expo).",
+        "Developed and secured RESTful APIs with JWT-based authentication, OTP verification, and Spring Security.",
+        "Implemented core modules including pet listings, user management, subscriptions, payments, and media upload.",
+        "Integrated Razorpay payment gateway and followed layered architecture (Controller-Service-Repository) for scalable backend design."
+      ],
+      "current": true
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "Aureza — E-Commerce Application",
+      "short_name": "Aureza",
+      "subtitle": "Monolithic Full-Stack E-Commerce Web Application",
+      "featured": true,
+      "category": "fullstack",
+      "description": "Enterprise-grade multi-role electronic commerce platform engineered with Spring Boot 4 (Java 21 LTS), React 19, Tailwind CSS v4, PostgreSQL 16, Stripe payment gateway, and stateless JWT Role-Based Access Control (RBAC). Built with a decoupled Client-Server architecture following layered Controller-Service-Repository patterns, ModelMapper DTO encapsulation, and centralized exception handling.",
+      "tags": [
+        "Java 21",
+        "Spring Boot 4.1.1",
+        "React 19",
+        "PostgreSQL 16",
+        "Stripe Java SDK",
+        "Stripe Elements",
+        "Spring Security 6",
+        "JJWT",
+        "Tailwind CSS v4",
+        "Docker"
+      ],
+      "architecture": "Decoupled Client-Server SPA (React 19) -> Spring Security 6 & JWT Filter -> REST Controllers (DTO Validation) -> Service Layer -> Spring Data JPA -> PostgreSQL 16 ACID Database + Stripe API",
+      "highlights": [
+        "Primary flagship full-stack project featuring multi-tier Role-Based Access Control (Customer ROLE_USER, Merchant ROLE_SELLER, Super Admin ROLE_ADMIN)",
+        "Dual payment gateway architecture: PCI-compliant card processing via Stripe Elements SDK (stateless client-secret flow) + dynamic merchant UPI QR code generator + COD",
+        "Real-time database-persisted shopping cart with instant quantity synchronization and automatic pricing/discount evaluation",
+        "Dedicated Merchant/Seller portal for self-service product inventory, image uploads, discount management, and order fulfillment",
+        "Executive platform admin telemetry dashboard tracking gross revenue, total sales volume, order statuses, and user acquisition",
+        "Layered Controller-Service-Repository architecture with ModelMapper DTOs and centralized @RestControllerAdvice exception handling",
+        "Multi-address delivery book with 3-step checkout stepper and live order status tracking (PENDING, PROCESSING, SHIPPED, DELIVERED)"
+      ],
+      "github": "https://github.com/TaquiAlam/Aureza-EcommerceApplication",
+      "live": "https://aureza-orcin.vercel.app/"
+    },
+    {
+      "title": "ResearchAgent",
+      "short_name": "ResearchAgent",
+      "subtitle": "Autonomous Multi-Agent Deep Research System",
+      "featured": false,
+      "category": "ai",
+      "description": "Autonomous Multi-Agent Research System built with LangChain, LangGraph, Python, and Tavily Search API. Features an iterative reflection loop to execute deep web research, summarize web sources, and synthesize comprehensive analytical reports.",
+      "tags": [
+        "Python",
+        "LangChain",
+        "LangGraph",
+        "Tavily Search API",
+        "Streamlit",
+        "Multi-Agent Workflows",
+        "Iterative Reflection"
+      ],
+      "highlights": [
+        "Multi-agent workflow with goal-driven research and iterative reflection loops",
+        "Integrated Tavily Search API for real-time web information synthesis",
+        "Modular architecture with clean separation between search, analysis, and report generation",
+        "Deployed interactive web application built with Streamlit on Render"
+      ],
+      "github": "https://github.com/TaquiAlam/Research_Agent--Multi-Agent-System.git",
+      "live": "https://research-agent-3rub.onrender.com/"
+    },
+    {
+      "title": "IntelliRAG",
+      "short_name": "IntelliRAG",
+      "subtitle": "Production-Ready Document Q&A RAG Platform",
+      "featured": false,
+      "category": "ai",
+      "description": "Production-grade Retrieval-Augmented Generation application for PDF document Q&A. Ingests PDF documents, performs intelligent chunking and vector embedding into ChromaDB, and executes dense semantic retrieval to deliver grounded, hallucination-resistant answers with LLMs.",
+      "tags": [
+        "FastAPI",
+        "Python",
+        "LangChain",
+        "ChromaDB",
+        "Vector Embeddings",
+        "Semantic Search",
+        "RAG Pipeline"
+      ],
+      "highlights": [
+        "End-to-end PDF processing pipeline: extraction, recursive text splitting, and ChromaDB vector indexing",
+        "Dense semantic search retrieval paired with contextual prompt engineering",
+        "High-performance asynchronous REST API built with FastAPI and CORS security",
+        "Clean separation of PDF service, embedding service, and RAG retrieval pipelines"
+      ],
+      "github": "https://github.com/TaquiAlam/IntelliRAG",
+      "live": ""
+    },
+    {
+      "title": "MyPet Marketplace",
+      "short_name": "MyPet",
+      "subtitle": "Full-Stack Pet Marketplace Mobile Application",
+      "featured": false,
+      "category": "backend",
+      "description": "Full-stack pet marketplace mobile app built with Spring Boot backend and React Native (Expo) frontend. Features JWT auth, OTP verification, Razorpay payments, and layered architecture.",
+      "tags": [
+        "Spring Boot",
+        "React Native",
+        "JWT",
+        "Razorpay",
+        "REST API",
+        "Spring Security",
+        "JPA/Hibernate"
+      ],
+      "highlights": [
+        "Secured RESTful APIs with JWT + OTP verification and Spring Security",
+        "Core modules: pet listings, user management, subscriptions, and media upload",
+        "Integrated Razorpay payment gateway with layered Controller-Service-Repository design"
+      ],
+      "github": "https://github.com/TaquiAlam/Mypet-Apllication",
+      "live": ""
+    }
+  ],
+
+  "publications": [
+    {
+      "title": "Your First Agentic AI: From Concepts to Production",
+      "platform": "Medium",
+      "date": "Aug 2026",
+      "url": "https://medium.com",
+      "description": "Authored an end-to-end technical guide explaining the core architecture and design principles of Agentic AI systems, covering state & shared memory, reducers, workflow design patterns, persistence, threading, streaming, RAG, Human-in-the-Loop (HITL), observability, and production pipelines with Docker, AWS, and CI/CD."
+    }
+  ],
+
+  "achievements": [
+    "5-Star HackerRank rating in Java with deep problem-solving expertise",
+    "Solved 700+ problems on CodeChef with a 1400 rating",
+    "Nominated at college level for the Smart India Hackathon (SIH) by presenting an innovative and practical solution"
+  ],
+
+  "career_interests": {
+    "roles": [
+      "Java Backend Developer",
+      "Full Stack Developer (Spring Boot + React)",
+      "AI / Agentic AI Engineer",
+      "Backend Engineer (Spring Boot / FastAPI)"
+    ],
+    "preferences": "Seeking opportunities to learn, contribute, and add value to organizational goals. Open to Remote, Hybrid, and Onsite roles.",
+    "looking_for": "Internships and full-time positions in backend development (Java 21/Spring Boot), AI/ML & RAG engineering, or full-stack engineering. Open to Remote, Hybrid, or Onsite."
+  },
+
+  "coding_profiles": {
+    "hackerrank": "5-Star in Java",
+    "codechef": "1400 rating, 700+ problems solved"
+  },
+
+  "extracurricular": [
+    "Core member of SIO NGO — actively contributed to management, event operations, and communication"
+  ]
+}

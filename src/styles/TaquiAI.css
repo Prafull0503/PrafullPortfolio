@@ -1,0 +1,794 @@
+/* ==========================================
+   TAQUI AI — FLOATING AGENT & CHAT PANEL
+   Matches portfolio design: dark glass, purple accents, Inter font
+   ========================================== */
+
+/* ---------------------------------------------------------------------------
+   FLOATING AI CHARACTER
+   --------------------------------------------------------------------------- */
+.taqui-ai-trigger {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.taqui-ai-trigger__avatar-wrapper {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  animation: taquiFloat 3s ease-in-out infinite;
+}
+
+.taqui-ai-trigger__glow {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, transparent 70%);
+  animation: taquiPulseGlow 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.taqui-ai-trigger__avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2.5px solid rgba(139, 92, 246, 0.5);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.25);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  z-index: 2;
+  background: #0a0a0f;
+}
+
+.taqui-ai-trigger:hover .taqui-ai-trigger__avatar {
+  transform: scale(1.08);
+  border-color: rgba(139, 92, 246, 0.8);
+}
+
+/* Online indicator dot */
+.taqui-ai-trigger__status {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2.5px solid #0a0a0f;
+  z-index: 3;
+}
+
+body.light-mode .taqui-ai-trigger__status {
+  border-color: #FFF8F0;
+}
+
+/* Speech bubble */
+.taqui-ai-trigger__bubble {
+  background: rgba(15, 15, 25, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 14px;
+  padding: 10px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 220px;
+  line-height: 1.45;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  animation: taquiBubbleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: 1s;
+  position: relative;
+  white-space: normal;
+}
+
+body.light-mode .taqui-ai-trigger__bubble {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  color: #1e293b;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.taqui-ai-trigger__bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 28px;
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  border: inherit;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.taqui-ai-trigger__bubble-highlight {
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+body.light-mode .taqui-ai-trigger__bubble-highlight {
+  color: #7c3aed;
+}
+
+/* Close/dismiss bubble button */
+.taqui-ai-trigger__bubble-close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.taqui-ai-trigger__bubble-close:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.light-mode .taqui-ai-trigger__bubble-close {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .taqui-ai-trigger__bubble-close:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* ---------------------------------------------------------------------------
+   ANIMATIONS — CHARACTER
+   --------------------------------------------------------------------------- */
+@keyframes taquiFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes taquiPulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+@keyframes taquiBubbleIn {
+  0% { opacity: 0; transform: scale(0.8) translateY(8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ---------------------------------------------------------------------------
+   CHAT PANEL — OVERLAY
+   --------------------------------------------------------------------------- */
+.taqui-ai-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.taqui-ai-overlay--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------------------------------------------------------------------------
+   CHAT PANEL
+   --------------------------------------------------------------------------- */
+.taqui-ai-panel {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 420px;
+  max-height: calc(100vh - 80px);
+  height: 620px;
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background: rgba(12, 12, 22, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  overflow: hidden;
+
+  /* Slide-in animation */
+  transform: translateY(20px) scale(0.95);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.25s ease,
+              visibility 0.25s ease;
+}
+
+.taqui-ai-panel--open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+body.light-mode .taqui-ai-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(0, 0, 0, 0.03) inset;
+}
+
+/* ---------------------------------------------------------------------------
+   CHAT HEADER
+   --------------------------------------------------------------------------- */
+.taqui-ai-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+body.light-mode .taqui-ai-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.taqui-ai-header__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid rgba(139, 92, 246, 0.4);
+}
+
+.taqui-ai-header__info {
+  flex: 1;
+}
+
+.taqui-ai-header__name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+body.light-mode .taqui-ai-header__name {
+  color: #0f172a;
+}
+
+.taqui-ai-header__badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #ffffff;
+}
+
+.taqui-ai-header__status {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 2px 0 0;
+}
+
+body.light-mode .taqui-ai-header__status {
+  color: #64748b;
+}
+
+.taqui-ai-header__close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.taqui-ai-header__close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+body.light-mode .taqui-ai-header__close {
+  background: rgba(0, 0, 0, 0.04);
+  color: #64748b;
+}
+
+body.light-mode .taqui-ai-header__close:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #0f172a;
+}
+
+/* ---------------------------------------------------------------------------
+   MESSAGES AREA
+   --------------------------------------------------------------------------- */
+.taqui-ai-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  scroll-behavior: smooth;
+}
+
+.taqui-ai-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.taqui-ai-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.taqui-ai-messages::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.2);
+  border-radius: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   WELCOME MESSAGE
+   --------------------------------------------------------------------------- */
+.taqui-ai-welcome {
+  text-align: center;
+  padding: 10px 0 8px;
+}
+
+.taqui-ai-welcome__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2.5px solid rgba(139, 92, 246, 0.3);
+  margin-bottom: 14px;
+}
+
+.taqui-ai-welcome__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px;
+}
+
+body.light-mode .taqui-ai-welcome__title {
+  color: #0f172a;
+}
+
+.taqui-ai-welcome__text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+  margin: 0 0 20px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.light-mode .taqui-ai-welcome__text {
+  color: #64748b;
+}
+
+/* Suggestion chips */
+.taqui-ai-welcome__suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.taqui-ai-welcome__chip {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.taqui-ai-welcome__chip:hover {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.25);
+  color: #a78bfa;
+  transform: translateX(4px);
+}
+
+body.light-mode .taqui-ai-welcome__chip {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #475569;
+}
+
+body.light-mode .taqui-ai-welcome__chip:hover {
+  background: rgba(139, 92, 246, 0.05);
+  border-color: rgba(139, 92, 246, 0.2);
+  color: #7c3aed;
+}
+
+/* ---------------------------------------------------------------------------
+   MESSAGE BUBBLES
+   --------------------------------------------------------------------------- */
+.taqui-ai-msg {
+  display: flex;
+  gap: 10px;
+  max-width: 92%;
+  animation: taquiMsgIn 0.3s ease both;
+}
+
+.taqui-ai-msg--user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.taqui-ai-msg--ai {
+  align-self: flex-start;
+}
+
+.taqui-ai-msg__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(139, 92, 246, 0.3);
+  margin-top: 2px;
+}
+
+.taqui-ai-msg__content {
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+/* AI message bubble */
+.taqui-ai-msg--ai .taqui-ai-msg__content {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+  border-top-left-radius: 4px;
+}
+
+body.light-mode .taqui-ai-msg--ai .taqui-ai-msg__content {
+  background: #f1f5f9;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  color: #1e293b;
+}
+
+/* User message bubble */
+.taqui-ai-msg--user .taqui-ai-msg__content {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: #ffffff;
+  border: none;
+  border-top-right-radius: 4px;
+}
+
+/* Markdown formatting inside AI messages */
+.taqui-ai-msg__content strong {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+body.light-mode .taqui-ai-msg__content strong {
+  color: #0f172a;
+}
+
+.taqui-ai-msg__content ul,
+.taqui-ai-msg__content ol {
+  margin: 6px 0;
+  padding-left: 18px;
+}
+
+.taqui-ai-msg__content li {
+  margin: 3px 0;
+}
+
+.taqui-ai-msg__content code {
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #c084fc;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 0.84em;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+body.light-mode .taqui-ai-msg__content code {
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  color: #7c3aed;
+}
+
+.taqui-ai-msg__content p {
+  margin: 0 0 8px;
+}
+
+.taqui-ai-msg__content p:last-child {
+  margin-bottom: 0;
+}
+
+.taqui-ai-msg__content h3,
+.taqui-ai-msg__content h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 10px 0 4px;
+  color: #a78bfa;
+}
+
+body.light-mode .taqui-ai-msg__content h3,
+body.light-mode .taqui-ai-msg__content h4 {
+  color: #6d28d9;
+}
+
+@keyframes taquiMsgIn {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------------------------------------
+   THINKING STATE
+   --------------------------------------------------------------------------- */
+.taqui-ai-thinking {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  animation: taquiMsgIn 0.3s ease both;
+}
+
+.taqui-ai-thinking__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 1.5px solid rgba(139, 92, 246, 0.3);
+  animation: taquiThinkPulse 1.5s ease-in-out infinite;
+}
+
+.taqui-ai-thinking__dots {
+  display: flex;
+  gap: 4px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border-top-left-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.light-mode .taqui-ai-thinking__dots {
+  background: #f1f5f9;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.taqui-ai-thinking__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.6);
+  animation: taquiDotBounce 1.2s ease-in-out infinite;
+}
+
+.taqui-ai-thinking__dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.taqui-ai-thinking__dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes taquiThinkPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+  50% { opacity: 0.7; box-shadow: 0 0 12px 4px rgba(139, 92, 246, 0.2); }
+}
+
+@keyframes taquiDotBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* ---------------------------------------------------------------------------
+   INPUT AREA
+   --------------------------------------------------------------------------- */
+.taqui-ai-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+body.light-mode .taqui-ai-input {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.taqui-ai-input__field {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.88rem;
+  outline: none;
+  transition: all 0.25s ease;
+  min-height: 40px;
+  resize: none;
+}
+
+.taqui-ai-input__field::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.taqui-ai-input__field:focus {
+  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+body.light-mode .taqui-ai-input__field {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
+}
+
+body.light-mode .taqui-ai-input__field::placeholder {
+  color: #94a3b8;
+}
+
+body.light-mode .taqui-ai-input__field:focus {
+  border-color: rgba(139, 92, 246, 0.4);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.08);
+}
+
+.taqui-ai-input__send {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.taqui-ai-input__send:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+}
+
+.taqui-ai-input__send:active {
+  transform: scale(0.95);
+}
+
+.taqui-ai-input__send:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ---------------------------------------------------------------------------
+   ERROR MESSAGE
+   --------------------------------------------------------------------------- */
+.taqui-ai-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  font-size: 0.82rem;
+  animation: taquiMsgIn 0.3s ease both;
+}
+
+/* ---------------------------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------------------------- */
+@media (max-width: 576px) {
+  .taqui-ai-trigger {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .taqui-ai-trigger__avatar-wrapper {
+    width: 58px;
+    height: 58px;
+  }
+
+  .taqui-ai-trigger__avatar {
+    width: 58px;
+    height: 58px;
+  }
+
+  .taqui-ai-trigger__bubble {
+    display: none;
+  }
+
+  .taqui-ai-panel {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .taqui-ai-overlay {
+    display: none;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .taqui-ai-panel {
+    width: 380px;
+    height: 560px;
+  }
+
+  .taqui-ai-trigger__bubble {
+    max-width: 180px;
+    font-size: 0.78rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   HIDE TRIGGER WHEN PANEL IS OPEN
+   --------------------------------------------------------------------------- */
+.taqui-ai-trigger--hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+  transition: all 0.2s ease;
+}

@@ -1,0 +1,116 @@
+/* ==========================================
+   EXPERIENCE SECTION - LAYOUT WITH ANIMATION
+   ========================================== */
+
+.experience__wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (max-width: 1100px) {
+  .experience__wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Cards column stretches full height */
+.experience__list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card stretches to fill full column height */
+.experience__card {
+  flex: 1;
+}
+
+/* Bullets bigger and spaced out */
+.experience__bullets {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.experience__bullet {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  padding-left: 22px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.experience__bullet::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-size: 1rem;
+}
+
+body.light-mode .experience__bullet {
+  color: #334155;
+}
+
+body.light-mode .experience__bullet::before {
+  color: #6366f1;
+}
+
+/* Animation Container - LEFT — stretches full height */
+.experience__animation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: -40px;
+}
+
+@media (max-width: 1100px) {
+  .experience__animation {
+    min-height: 380px;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+}
+
+.experience__lottie {
+  width: 110%;
+  max-width: 600px;
+}
+
+/* Dark mode glow */
+.experience__lottie {
+  filter: drop-shadow(0 0 35px rgba(99, 102, 241, 0.3));
+  transition: filter 0.4s ease;
+}
+
+.experience__lottie:hover {
+  filter: drop-shadow(0 0 60px rgba(99, 102, 241, 0.5));
+}
+
+/* Light mode */
+body.light-mode .experience__lottie {
+  filter: drop-shadow(0 10px 35px rgba(0, 0, 0, 0.15)) brightness(0.9) saturate(1.1);
+}
+
+/* Footer single line fix */
+.footer__container--single {
+  justify-content: center;
+  text-align: center;
+  flex-direction: row;
+  gap: 0;
+  padding: 0;
+}
+
+.footer__container--single .footer__copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.875rem;
+}
