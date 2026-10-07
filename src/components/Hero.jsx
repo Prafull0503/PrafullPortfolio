@@ -181,7 +181,7 @@ function Hero() {
             {/* Photo Container with natural background blend */}
             <div className="hero__blob hero__blob--transparent">
               <img
-                src="./pfp_cutout.png"
+                src="/pfp_cutout.png"
                 alt="Prafull Shukla"
                 className="hero__blob-image"
                 draggable="false"
